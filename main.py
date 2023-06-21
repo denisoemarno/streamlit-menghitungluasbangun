@@ -2,8 +2,8 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 with st.sidebar:
-    selected = option_menu("Menhitung Luas Bangun", ["Hitung Luas Persegi Panjang", 'Hitung Luas Segitiga', 'Hitung Luas Lingkaran'], 
-        icons=['house', 'gear', 'list-task','cast'], menu_icon="cast", default_index=0)
+    selected = option_menu("Menhitung Luas Bangun", ["Hitung Luas Persegi Panjang", 'Hitung Luas Segitiga', 'Hitung Luas Lingkaran','Hitung Luas Persegi'], 
+        icons=['house', 'gear', 'list-task','cast','gear'], menu_icon="cast", default_index=0)
     selected
 if(selected == 'Hitung Luas Persegi Panjang'):
         st.title('Hitung Luas Persegi Panjang')
@@ -37,6 +37,13 @@ if(selected == 'Hitung Luas Lingkaran') :
             luas_lingkaran = 22/7*jarijari*jarijari
             st.success(f"Luas Lingkarang Adalah ={luas_lingkaran}")
         
-    
+if(selected == 'Hitung Luas Persegi') :
+        st.title('Hitung Luas Persegi')
+        sisi = st.number_input ("Masukkan Nilai Sisi Persegi", 0)
+        hitung = st.button ("Hitung Luas Persegi")
+        
+        if hitung :
+            luas_persegi = sisi*sisi
+            st.success(f"Luas Lingkarang Adalah ={luas_persegi}")
         
     
